@@ -1,0 +1,50 @@
+import numpy as np
+import pandas as pd
+df=pd.read_csv("C:/Users/admin/Downloads/archive (11)/diamonds.csv")
+df.head()
+
+import pandas as pd
+user_cols=['carat','cut','x','y','z']
+diamonds=pd.read_csv("C:/Users/admin/Downloads/archive (11)/diamonds.csv")
+print("First 6 rows:")
+print(diamonds[user_cols].head(6))
+
+print(diamonds['carat'])
+
+diamonds['Quality -color']=diamonds.cut+','+diamonds.color
+print(diamonds.head())
+
+diamonds = pd.read_csv("C:/Users/admin/Downloads/archive (11)/diamonds.csv")
+print("Oroginal dataframe:")
+print(diamonds.head())
+print("\ After removing the second  columns:")
+diamonds.drop('cut',axis=1,inplace=True)
+print(diamonds.head())
+
+diamonds = pd.read_csv("C:/Users/admin/Downloads/archive (11)/diamonds.csv")
+print("Oroginal dataframe:")
+print(diamonds.head())
+print("\ After removing multiple columns:")
+diamonds.drop(['carat','color','y',],axis=1,inplace=True)
+print(diamonds.head())
+
+diamonds = pd.read_csv("C:/Users/admin/Downloads/archive (11)/diamonds.csv")
+print("Oroginal dataframe:")
+print(diamonds.head())
+print("\ After removing multiple rows:")
+diamonds.drop([2,4,5],axis=0,inplace=True)
+print(diamonds.head())
+
+print("\ price series in descending order:")
+result=diamonds.price.sort_values(ascending = False)
+print(result)
+
+print("Sorting the entireb Data Frame bt the 'carat' Series in ascending order")
+result=diamonds.sort_values('carat')
+print(result)
+print("Sorting the entireb Data Frame bt the 'carat' Series in descending order")
+result=diamonds.sort_values('carat',ascending = False)
+print(result)
+
+
+
